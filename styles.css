@@ -1,0 +1,20 @@
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+    min-height: 600px;  /* Ensure container has enough space */
+}
+
+.logo {
+    width: 800px;  /* Much larger size */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: absolute;  /* Changed to absolute positioning */
+    left: 50%;
+    transform: translateX(-50%);  /* Center horizontally */
+    z-index: 1000;
+}
