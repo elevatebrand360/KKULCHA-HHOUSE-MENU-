@@ -252,13 +252,6 @@ export default function MenuPage() {
                 <Star className="h-4 w-4 mr-2" />
                 Popular Items
               </TabsTrigger>
-              <TabsTrigger
-                value="specials"
-                className="data-[state=active]:bg-gold-800 data-[state=active]:text-gold-50 text-gold-400"
-              >
-                <Coffee className="h-4 w-4 mr-2" />
-                Specials
-              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="menu" className="mt-0">
@@ -545,59 +538,6 @@ export default function MenuPage() {
                     </motion.div>
                   ))}
                 </div>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="specials">
-              <div className="mb-6">
-                <motion.h2
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-2xl font-bold text-gold-400 mb-4 pb-2 border-b border-gold-800/50 flex items-center"
-                >
-                  <span className="bg-gold-400 h-8 w-1 mr-3 rounded-full"></span>
-                  Today's Specials
-                </motion.h2>
-
-                {/* Random suggestion for the day */}
-                {(() => {
-                  // Flatten all menu items
-                  const allItems = menuData.flatMap((cat) => cat.items);
-                  // Seeded random based on date
-                  const today = new Date();
-                  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-                  function seededRandom(seed: number) {
-                    let x = Math.sin(seed) * 10000;
-                    return x - Math.floor(x);
-                  }
-                  const randomIndex = Math.floor(seededRandom(seed) * allItems.length);
-                  const item = allItems[randomIndex];
-                  if (!item) return null;
-                  return (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="relative mb-6 rounded-2xl border-2 border-gold-400 bg-white/30 backdrop-blur-md shadow-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4 overflow-hidden mx-auto max-w-xl"
-                    >
-                      <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
-                        <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 shadow-lg border-4 border-white">
-                          <Star className="text-white w-7 h-7" />
-                        </div>
-                      </div>
-                      <div className="flex-1 text-center md:text-left mt-8 md:mt-0">
-                        <h3 className="font-extrabold text-2xl md:text-3xl text-gold-900 mb-2 tracking-tight drop-shadow">{item.name}</h3>
-                        {item.description && (
-                          <p className="text-gold-800/90 mt-1 text-base font-medium">{item.description}</p>
-                        )}
-                      </div>
-                      <div className="flex flex-col items-center md:items-end mt-4 md:mt-0">
-                        {item.price && (
-                          <div className="font-extrabold text-2xl md:text-3xl bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text text-transparent drop-shadow">₹{item.price}</div>
-                        )}
-                      </div>
-                    </motion.div>
-                  );
-                })()}
               </div>
             </TabsContent>
           </Tabs>
