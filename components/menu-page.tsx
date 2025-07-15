@@ -380,7 +380,7 @@ export default function MenuPage() {
                                   transition={{ duration: 0.3, delay: index * 0.05 }}
                                   className="flex flex-row items-center justify-between bg-gradient-to-br from-gold-950/80 to-gold-900/90 border-2 border-gold-700 rounded-xl shadow-xl px-4 py-3 min-h-[64px] h-auto w-full gap-4 hover:shadow-gold-900/40 transition-all duration-300 relative"
                                 >
-                                  <h3 className="font-bold text-gold-200 text-base sm:text-lg text-left w-2/3 truncate">
+                                  <h3 className="font-bold text-gold-200 text-base sm:text-lg text-left w-2/3 break-words whitespace-normal">
                                     {item.name}
                                   </h3>
                                   <span className="font-extrabold text-gold-400 text-lg sm:text-xl text-right w-1/3">₹{item.price}</span>
@@ -463,7 +463,7 @@ export default function MenuPage() {
                                   transition={{ duration: 0.3, delay: index * 0.05 }}
                                   className="flex flex-row items-center justify-between bg-gradient-to-br from-gold-950/80 to-gold-900/90 border-2 border-gold-700 rounded-xl shadow-xl px-4 py-3 min-h-[64px] h-auto w-full gap-4 hover:shadow-gold-900/40 transition-all duration-300 relative"
                                 >
-                                  <h3 className="font-bold text-gold-200 text-base sm:text-lg text-left w-2/3 truncate">
+                                  <h3 className="font-bold text-gold-200 text-base sm:text-lg text-left w-2/3 break-words whitespace-normal">
                                     {item.name}
                                   </h3>
                                   <span className="font-extrabold text-gold-400 text-lg sm:text-xl text-right w-1/3">₹{item.price}</span>
